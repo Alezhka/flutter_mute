@@ -1,8 +1,8 @@
 name: flutter_mute
 description: Check/change mute mode.
 version: 0.0.1
-author:
-homepage:
+author: Aleksei Sturov
+homepage: https://github.com/Alezhka/flutter_mute
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
