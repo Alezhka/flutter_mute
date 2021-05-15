@@ -34,7 +34,7 @@ class FlutterMute {
   /// [openNotificationPolicySettings] before calling this function.
   static Future<void> setRingerMode(RingerMode mode) async {
     if(!Platform.isAndroid) {
-      return true;
+      return;
     }
 
     final raw = RingerMode.values.indexOf(mode);

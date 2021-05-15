@@ -15,8 +15,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-  RingerMode _mode;
-  String _permissionStatus;
+  RingerMode? _mode;
+  String? _permissionStatus;
 
   @override
   void initState() {
@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> getRingerMode() async {
-    RingerMode mode;
+    RingerMode? mode;
     try {
       mode = await FlutterMute.getRingerMode();
     } catch (err) {
@@ -68,27 +68,27 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text('Running on: $_mode\n $_permissionStatus'),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: getRingerMode,
                 child: Text('Get ringer mode'),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: getAccessStatus,
                 child: Text('Get access status'),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: setNormalMode,
                 child: Text('Set Normal mode'),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: setSilentMode,
                 child: Text('Set Silent mode'),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: setVibrateMode,
                 child: Text('Set Vibrate mode'),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: openNotificationPolicySettings,
                 child: Text('Open Policy Access Settings'),
               ),
