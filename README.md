@@ -45,3 +45,7 @@ if (!isAccessGranted) {
   await FlutterMute.openNotificationPolicySettings();
 }
 ```
+
+# Note
+
+IOS Simulator always return normal mode.

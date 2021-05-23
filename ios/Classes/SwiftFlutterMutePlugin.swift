@@ -9,6 +9,10 @@ public class SwiftFlutterMutePlugin: NSObject, FlutterPlugin {
         case Vibrate = 2
     }
     
+    var isSimulator: Bool {
+        return TARGET_OS_SIMULATOR != 0
+    }
+    
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "flutter_mute", binaryMessenger: registrar.messenger())
     let instance = SwiftFlutterMutePlugin()
@@ -18,8 +22,8 @@ public class SwiftFlutterMutePlugin: NSObject, FlutterPlugin {
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     switch call.method {
     case "getRingerMode":
-        if TARGET_OS_SIMULATOR != 0 {
-            result(RingerMode.Normal)
+        if isSimulator {
+            result(0)
             return
         }
         MuteDetect.shared.detectSound { (isMute) in
