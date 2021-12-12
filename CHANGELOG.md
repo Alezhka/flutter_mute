@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Update kotlin version.
+
 ## 0.0.3
 
 * Fix crash on IOS Simulator.
